@@ -7,7 +7,7 @@ pipeline {
             spec:
               containers:
               - name: maven
-                image: vlad1020/java-21-builder
+                image: vlad1020/java-21-builder:1.0
                 command:
                 - cat
                 tty: true
