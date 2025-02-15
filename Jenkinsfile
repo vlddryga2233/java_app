@@ -16,10 +16,17 @@ pipeline {
     }
 
     stages {
-        stage('Maven version'){
+        stage('Validate maven version'){
             steps {
                 container('maven'){
                     sh 'mvn --version'
+                }
+            }
+        }
+        stage('Build Java Application'){
+            steps {
+                container('maven'){
+                    sh 'mvn clean install'
                     sh 'ls -la'
                 }
             }
