@@ -21,7 +21,7 @@ pipeline {
         stage('Validate maven version'){
             steps {
                 container('maven'){
-                    log.info("Maven version")
+                    log.info "Maven version"
                     sh 'mvn --version'
                 }
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('Build Java Application'){
             steps {
                 container('maven'){
-                    log.info("Build java app")
+                    log.info "Build java app"
                     sh 'mvn clean install'
                     sh 'ls -la'
                 }
